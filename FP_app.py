@@ -22,9 +22,10 @@ img3= Image.open('df3.png')
 # 2. Sidebar Menu Setup
 st.sidebar.title("Select Analysis")
 analysis_options = {
-    "1": "Percentage of Sports Articles by Country",
-    "2": "Views of Sports vs. Not sports spanish wikipedia articles between 2023-2024 months",
-    "3":  "Number of Sports articles related to humans"
+    "1":"Main Page",
+    "2": "Percentage of Sports Articles by Country",
+    "3": "Views of Sports vs. Not sports spanish wikipedia articles between 2023-2024 months",
+    "4":  "Number of Sports articles related to humans"
 }
 
 option_key = st.sidebar.radio(
@@ -35,30 +36,38 @@ option_key = st.sidebar.radio(
 
 st.title(f"Spanish wikipedia articles: {analysis_options[option_key]}")
 
-st.write('Data, we worked with spanish articles in the es.wikpedia from the months of 2023-2024 using their means and sums to generate our figures')
-
-st.write('Steps taken: ')
-st.write("""
-1. Prepping data frames: we first seperated rows bewtween  dataframes containing humans and non humans articles. This was determined through , the instance of:, attribute
-2. Then we created a column that would contain teh text we would classify by, either a description or title for those missing a description
-3. Then we cleaned up the teh data in these columns by removing special characters, stopwords, and spaces of the items you are looking at.
-4. Finally we did naive bayes classification on both dataframes to classify them as sports and not sports
-[The latter was attempted after failing to categorize articles with zero-shot classification]""")
-
-st.write("""Key takeaways: Categorizing data with small text samples in dfferent languages can prove difficult due to the high variation of vocabulary
-and also grammar that varies across languages. In addition the categorical information provided by online articles can be hard to access 
-and even possible lead to having inaccurate results""")
-
-st.write('Gen AI: generative AI was used to identify models for zero shot classifcation that would be multilingual when applied to a single comlumn containing both english and spanish'
-        'additionally, gen AI was also utilize to check if figures where being generated correctly and to understand hwo to make them fit properly on the streamlit app. ')
-
 
 # 3. Main Page Logic based on Selection
-if option_key == "1":
+if option_key=="1":
+    st.write('## Research questions:')
+    st.write('How many Spanish articles from es.wikipedia are related to Sports?')
+
+    st.write('## Hypothesis:')
+    st.write('**We hypothesize that spanish articles for spanish speaking countries will have more sports related articles than other countries.')
+
+    st.write('## Data')
+    st.write('We worked with spanish articles in the es.wikpedia from the months of 2023-2024 using their means and sums to generate our figures.' \
+    '')
+
+    st.write('## Steps taken:')
+    st.write("""
+    1. **We first seperated rows bewtween  dataframes containing humans and non humans articles. This was determined through , the instance of:, attribute.**
+    2. **Then we created a column that would contain teh text we would classify by, either a description or title for those missing a description.**
+    3. **Then we cleaned up the teh data in these columns by removing special characters, stopwords, and spaces of the items you are looking at.**
+    4. **Finally we did naive bayes classification on both dataframes to classify them as sports and not sports**
+    [The latter was attempted after failing to categorize articles with zero-shot classification]""")
+    st.write('## Key Takeaways')
+    st.write("""Categorizing data with small text samples in dfferent languages can prove difficult due to the high variation of vocabulary
+    and also grammar that varies across languages. In addition the categorical information provided by online articles can be hard to access 
+    and even possible lead to having inaccurate results""")
+    st.write('## Gen AI')
+    st.write('Generative AI was used to identify models for zero shot classifcation that would be multilingual when applied to a single comlumn containing both english and spanish'
+            'additionally, gen AI was also utilize to check if figures where being generated correctly and to understand hwo to make them fit properly on the streamlit app. ')
+if option_key == "2":
     # --- Analysis 1: Percentage of Sports Articles by Country (map Chart) ---
 
-    st.header("1. Top article categories of top 400 viewed article in 2024-2023 months per country in 2023-02")
-    st.markdown("Examine the top categories of spanish articles read across different countries.")
+    st.header("1. Top article fraction of top 400 viewed article in 2024-2023 months per country in 2023-02")
+    st.markdown("Examine the fraction of categories of spanish articles read across different countries with the most views.")
     st.write('Data was categorized using the descriptions components and each article and then performing naive bayes classification. ')
 
     fig1= px.choropleth(
@@ -79,7 +88,7 @@ if option_key == "1":
     st.dataframe(df1.head(10))
     st.image(img1, caption="Confussion matrix for categorizing dataframe for figure 1 and 2", use_column_width=True)
 
-if option_key=='2':
+if option_key=='3':
     st.header("2. Views of Sports vs. Not sports spanish wikipedia articles between 2023-2024 months")
     st.markdown("Compare the views between spanish article in 2024-2023 months.")
     st.write('Data was categorized using the descriptions components and each article and then performing naive bayes classification.')
@@ -108,7 +117,7 @@ if option_key=='2':
     st.dataframe(df2.head(10))
 
 
-if option_key=='3':
+if option_key=='4':
     st.header("3. Category counts of sports articles for humans")
     st.markdown("Comapre the spanish articles about humans related to sports in 2024-2023 months.")
     st.write('Data was categorized using the descriptions components and each article and then performing naive bayes classification ')

@@ -1,37 +1,37 @@
-,country,sports_percentage
-0,Argentina,90.09483667017913
-1,Bangladesh,100.0
-2,Bolivia,53.84615384615385
-3,Brazil,60.0
-4,Canada,100.0
-5,Chile,93.7062937062937
-6,Colombia,97.41496598639455
-7,Costa Rica,100.0
-8,Dominican Republic,86.95652173913044
-9,Ecuador,99.0
-10,El Salvador,100.0
-11,Estonia,100.0
-12,France,100.0
-13,Germany,100.0
-14,Guatemala,86.66666666666667
-15,Hong Kong,100.0
-16,India,100.0
-17,Indonesia,100.0
-18,Japan,100.0
-19,Mexico,90.34236075625958
-20,Panama,100.0
-21,Paraguay,100.0
-22,Peru,93.3920704845815
-23,Philippines,100.0
-24,Puerto Rico,100.0
-25,Russia,100.0
-26,Singapore,100.0
-27,South Africa,100.0
-28,South Korea,100.0
-29,Spain,94.54985870004037
-30,Sweden,100.0
-31,Ukraine,100.0
-32,United Kingdom,100.0
-33,United States,74.36823104693141
-34,Uruguay,68.75
-35,Venezuela,94.66666666666667
+country,sports_percentage,total_articles
+Argentina,0.9009483667017913,949
+Bangladesh,1.0,1
+Bolivia,0.5384615384615384,13
+Brazil,0.6,5
+Canada,1.0,1
+Chile,0.9370629370629371,286
+Colombia,0.9741496598639455,735
+Costa Rica,1.0,3
+Dominican Republic,0.8695652173913043,23
+Ecuador,0.99,100
+El Salvador,1.0,3
+Estonia,1.0,1
+France,1.0,1
+Germany,1.0,1
+Guatemala,0.8666666666666667,15
+Hong Kong,1.0,11
+India,1.0,1
+Indonesia,1.0,1
+Japan,1.0,1
+Mexico,0.9034236075625958,1957
+Panama,1.0,3
+Paraguay,1.0,1
+Peru,0.933920704845815,227
+Philippines,1.0,1
+Puerto Rico,1.0,1
+Russia,1.0,1
+Singapore,1.0,28
+South Africa,1.0,1
+South Korea,1.0,1
+Spain,0.9454985870004037,2477
+Sweden,1.0,1
+Ukraine,1.0,1
+United Kingdom,1.0,1
+United States,0.7436823104693141,277
+Uruguay,0.6875,16
+Venezuela,0.9466666666666667,75
